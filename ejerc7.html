@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function calcular() {
+            // Recojo los datos
+            var peso = parseFloat(document.getElementById('weight').value);
+            var largo = parseFloat(document.getElementById('length').value);
+            var ancho = parseFloat(document.getElementById('width').value);
+            var alto = parseFloat(document.getElementById('height').value);
+            // Calculo
+            var cm3 = largo * ancho * alto;
+            var costo = 2 + (0.005 * cm3) + (0.1 * peso);
+            // Presento los resultados en html
+            document.getElementById("cost").innerHTML = costo;
+        }
+    </script>
 </head>
+
 <body>
     <h1>Calcule su tarifa de envio:</h1>
-    <label for="">Peso(g):</label>
-    <input type="number" id="peso" value="0">
+    <label for="weight">Peso(g):</label>
+    <input type="number" id="weight" value="0">
     <br>
     <p>Dimenciones del paquete:</p>
-    <label for="">Largo(cm):</label>
-    <input type="number" id="peso" value="0">
+    <label for="length">Largo(cm):</label>
+    <input type="number" id="length" value="0">
     <br>
-    <label for="">Ancho(cm):</label>
-    <input type="number" id="peso" value="0">
+    <label for="width">Ancho(cm):</label>
+    <input type="number" id="width" value="0">
     <br>
-    <label for="">Altura(cm):</label>
-    <input type="number" id="peso" value="0">
+    <label for="height">Altura(cm):</label>
+    <input type="number" id="height" value="0">
     <br>
     <br>
     <button onclick="calcular();"> Calcular</button>
     <br>
     <hr>
-    <label for="">Costo del envio: €</label><span id=""> 2 </span>
+    <label for="">Costo del envio: €</label><span id="cost"> 2 </span>
 </body>
+
 </html>
