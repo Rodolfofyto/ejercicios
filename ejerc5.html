@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Convertidor Pesetas/Euros</title>
+    <script>
+        function convertir() {
+            //Preparar los datos
+            var peset = parseFloat(document.getElementById('moneda').value);
+            //Calcular
+            var euro = peset / 166.386;
+            //Pintar en el inner.HTML
+            document.getElementById("conver").innerHTML = euro;
+        }
+        function conversión() {
+            //Preparar los datos
+            var eur = parseFloat(document.getElementById('moneda').value);
+            //Calcular
+            var pst = eur * 166.386;
+            //Mostrar resultado en html
+            document.getElementById("conver").innerHTML = pst;
+        }
+    </script>
 </head>
+
 <body>
-    
+    <h1>Convertidor de monedas</h1>
+    <label for="moneda">Pesetas y/o Euros</label>
+    <input type="number" id="moneda" value="0">
+    <br>
+    <br>
+    <button onclick="convertir();">Pesetas to Euros</button>
+    <button onclick="conversión();">Euros to Pesetas</button>
+    <br>
+    <hr>
+    <label>Conversión:</label><span id="conver" Mat> 0 </span>
 </body>
+
 </html>
