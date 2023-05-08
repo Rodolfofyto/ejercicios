@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calcular(){
+            var n1=parseFloat(in1.value);
+            var n2=parseFloat(in2.value);
+            var n3=parseFloat(in3.value);
+            var res=(n1+n2)/n3;
+
+            outresultado.innerHTML=res;
+        }
+    </script>
+
+    <label for="">Numero 1:</label>
+    <input type="number" id="in1"/>
+    <br/>
+    <label for="">Numero 2:</label>
+    <input type="number" id="in2"/>
+    <br/>
+    <label for="">Numero 3:</label>
+    <input type="number" id="in3"/>
+    <br/>
+    <button onclick="calcular();">Calcular</button>
+    <br/>
+    <output id="outresultado"></output>
+</body>
+</html>
+
+<script>
+    function calcular() {
+
+        var r = parseFloat(radio.value);
+        const PI = 3.1416;
+
+        alert(r);
+
+        var perimetro = 2 * PI * r;
+        var area = PI * r * r;
+        var diametro = 2 * r;
+
+        perimetro.innerHTML = perimetro;
+        area.innerHTML = area;
+        diametro.innerHTML = diametro;
+
+    }
+</script>

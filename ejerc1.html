@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+
+    <script>
+        function calcular() {
+            //Preparar los valores
+            var radio = parseFloat(document.getElementById('radio').value);
+            var PI = 3.1416;
+            //Calcular 
+            var perimetro = 2 * PI * radio;
+            var area = PI * radio * radio;
+            var diametro = 2 * radio;
+            //pintar los valores
+            document.getElementById("perimetro").innerHTML = perimetro;
+            document.getElementById("area").innerHTML = area;
+            document.getElementById("diametro").innerHTML = diametro;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Introduce el radio y obtendrás el perímetro, área y diámetro de la circunferencia</h1>
+    <label for="radio">Radio:</label>
+    <input type="number" id="radio" value="0" />
+    <button onclick="calcular();">Calcular</button>
+    <br />
+    <hr />
+    <label for="perimetro">Perímetro:</label><output id="perimetro">0</output>
+    <br />
+    <label for="area">Área:</label><output id="area">0</output>
+    <br />
+    <label for="diametro">Diámetro:</label><output id="diametro">0</output>
+</body>
+
+</html>
