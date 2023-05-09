@@ -13,7 +13,7 @@
             //Calcular
             var euro = peset / 166.386;
             //Pintar en el inner.HTML
-            document.getElementById("conver").innerHTML = euro;
+            document.getElementById("conver").innerHTML = euro + " Euros";
         }
         function conversión() {
             //Preparar los datos
@@ -21,7 +21,7 @@
             //Calcular
             var pst = eur * 166.386;
             //Mostrar resultado en html
-            document.getElementById("conver").innerHTML = pst;
+            document.getElementById("conver").innerHTML = pst + " Pesetas"; 
         }
     </script>
 </head>
@@ -36,7 +36,7 @@
     <button onclick="conversión();">Euros to Pesetas</button>
     <br>
     <hr>
-    <label>Conversión:</label><span id="conver"> 0 </span>
+    <label>Conversión: </label><span id="conver"> 0 </span>
 </body>
 
 </html>
