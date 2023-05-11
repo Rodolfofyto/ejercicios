@@ -6,6 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 7</title>
+    <style>
+        body {
+            width: 40%;
+            border: solid 1px #000000;
+            margin: 2%;
+            padding: 2%;
+        }
+
+        label {
+            display: inline-block;
+            min-width: 100px;
+        }
+
+        input {
+            margin-bottom: 2%;
+        }
+    </style>
     <script>
         function calcular() {
             // Recojo los datos
@@ -15,11 +32,11 @@
             var ancho = parseFloat(document.getElementById('width').value);
             var alto = parseFloat(document.getElementById('height').value);
             // Calculo
-            var cm3 = largo * ancho * alto;
-            var gramo = peso * 1000;
-            var costo = Pinicial + (0.005 * cm3) + (0.1 * (gramo / 100));
+            var cm3 = parseFloat(largo * ancho * alto);
+            var gramo = parseFloat(peso * 1000);
+            var costo = parseFloat(Math.ceil(Pinicial + (0.005 * cm3) + (0.1 * (gramo / 100))));
             // Presento los resultados en html
-            document.getElementById("cost").innerHTML = costo;
+            document.getElementById("cost").innerHTML = costo + " €";
         }
     </script>
 </head>
@@ -43,7 +60,7 @@
     <button onclick="calcular();"> Calcular</button>
     <br>
     <hr>
-    <label for="">Costo del envio: € </label><span id="cost"> 2 </span>
+    <label for="">Costo del envio: </label><span id="cost"> 2 € </span>
 </body>
 
 </html>

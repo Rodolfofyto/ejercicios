@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+    <style>
+        body {
+            width: 40%;
+            border: solid 1px #000000;
+            margin: 2%;
+            padding: 2%;
+        }
+
+        label {
+            display: inline-block;
+            min-width: 150px;
+        }
+
+        input {
+            margin-bottom: 2%;
+        }
+    </style>
+    <script>
+        function calcular() {
+            // Preparar los valores
+            var road = parseFloat(document.getElementById('road').value);
+            var town = parseFloat(document.getElementById('town').value);
+            var L = parseFloat(document.getElementById('prec').value);
+            var Lroad = 5.5;
+            var Ltown = 9.8;
+            // Calcular
+            var costo = (road / 100 * Lroad * L) + (town / 100 * Ltown * L);
+            // Presentar los resultados
+            document.getElementById("costod").innerHTML = costo + " €";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Calculadora de Viaje:</h1>
+
+    <label for="road">Km por carretera:</label>
+    <input type="text" id="road" value="0">
+    <br>
+    <label for="town">Km por ciudad:</label>
+    <input type="text" id="town" value="0">
+    <br>
+    <label for="prec">Precio del Gasoil:</label>
+    <input type="text" id="prec" value="0">
+    <br>
+    <br>
+    <button onclick="calcular();">Costo de Viaje</button>
+    <br>
+    <hr>
+    <p>El costo total del viaje será de: <span id="costod">0</span></p>
+</body>
+
+</html>
